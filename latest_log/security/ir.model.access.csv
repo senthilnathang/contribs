@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_latest_log_user,latest user log,model_latest_log,base.group_user,1,1,1,1
+access_latest_log_public,latest public log,model_latest_log,base.group_public,1,1,1,1

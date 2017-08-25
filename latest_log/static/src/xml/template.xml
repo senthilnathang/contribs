@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vim:fdl=1: -->
+<templates id="template" xml:space="preserve">
+    <t t-name="LatestLog">
+        <li class="latest_log_li oe_topbar_item" title="Latest Log">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-eye"/></a>
+            <ul class="dropdown-menu">
+        		<li class="no-link"><a href="#" class="text-muted">No records</a></li>
+            </ul>
+        </li>
+    </t>
+    <t t-name="LatestLog.li">
+    	<li t-foreach="widget" t-as="rec">
+    		<a t-att-href="rec.action" t-att-title="rec.name"><t t-esc="rec.short_name"/></a>
+    	</li>
+        <li t-if="widget == 0" class="no-link"><a href="#" class="text-muted">No records</a></li>
+    </t>    
+</templates>

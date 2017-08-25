@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="assets_common_inherit" inherit_id="web.assets_common" name="Latest Record Log">
+            <xpath expr="script[last()]" position="after">
+                <script src="/latest_log/static/src/js/latest_log.js"></script>
+            </xpath>
+            <xpath expr="link[last()]" position="after">
+                <link rel="stylesheet" href="/latest_log/static/src/css/latest_log.css"/>
+            </xpath>
+        </template>
+    </data>
+</openerp>
