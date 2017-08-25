@@ -6,7 +6,7 @@
                 <script src="/latest_log/static/src/js/latest_log.js"></script>
             </xpath>
             <xpath expr="link[last()]" position="after">
-                <link rel="stylesheet" href="/latest_log/static/src/css/latest_log.css"/>
+                <link rel="stylesheet" href="/latest_log/static/src/css/custom.css"/>
             </xpath>
         </template>
     </data>
