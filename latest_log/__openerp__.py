@@ -16,8 +16,7 @@
     'qweb': [
          'static/src/xml/template.xml'
     ],
-    'images': [
-    ],
+     'images': ['images/main_screenshot.png'],
     'installable': True,
     'auto_install': False,
 }
