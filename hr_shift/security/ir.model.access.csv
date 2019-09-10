@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_employee_shift_hr_employee_shift,employee_shift.hr_employee_shift,model_hr_employee_shift,hr.group_hr_manager,1,1,1,1
+access_hr_employee_shift_hr_employee_shift1,employee_shift.hr_employee_shift,model_hr_employee_shift,hr.group_hr_manager,1,1,1,1
+access_hr_employee_shift_hr_employe_shift_run,employee_shift.hr_employee_shift_run,model_hr_employee_shift_run,hr.group_hr_manager,1,1,1,1
