@@ -32,8 +32,8 @@
         </record>
 
         <record id="employee_shift_view_search" model="ir.ui.view">
-            <field name="name">employee.shift.search</field>
-            <field name="model">employee.shift</field>
+            <field name="name">hr.employee.shift.search</field>
+            <field name="model">hr.employee.shift</field>
             <field name="arch" type="xml">
                 <search string="Search report">
                     <group expand="0" string="Group By...">
@@ -45,8 +45,8 @@
         </record>
 
         <record model="ir.ui.view" id="view_employee_shift_form">
-            <field name="name">employee.shift.form</field>
-            <field name="model">employee.shift</field>
+            <field name="name">hr.employee.shift.form</field>
+            <field name="model">hr.employee.shift</field>
             <field name="arch" type="xml">
                 <form string="Fields">
                 <header>
@@ -79,8 +79,8 @@
         </record>
 
         <record model="ir.ui.view" id="hr_employee_shift_calendar_view">
-            <field name="name">employee.shift.calendar</field>
-            <field name="model">employee.shift</field>
+            <field name="name">hr.employee.shift.calendar</field>
+            <field name="model">hr.employee.shift</field>
             <field name="arch" type="xml">
                 <calendar string="Documents" date_start="start_date" date_stop="end_date" mode="month" quick_add="False" color="employee_id">
                     <field name="employee_id"/>
@@ -90,8 +90,8 @@
         </record>
 
         <record id="view_employee_shift" model="ir.ui.view">
-            <field name="name">employee.shift.gantt</field>
-            <field name="model">employee.shift</field>
+            <field name="name">hr.employee.shift.gantt</field>
+            <field name="model">hr.employee.shift</field>
             <field name="arch" type="xml">
                 <gantt type="consolidate"
                     date_start="start_date"
@@ -107,8 +107,8 @@
         </record>
 
         <record id="view_employee_shift_tree" model="ir.ui.view">
-            <field name="name">employee.shift.tree</field>
-            <field name="model">employee.shift</field>
+            <field name="name">hr.employee.shift.tree</field>
+            <field name="model">hr.employee.shift</field>
             <field name="arch" type="xml">
                 <tree string="">
                     <field name="start_date"/>
@@ -121,8 +121,8 @@
         </record>
 
  <record id="shift_rating_view_pivot" model="ir.ui.view">
-            <field name="name">employee.shift.pivot</field>
-            <field name="model">employee.shift</field>
+            <field name="name">hr.employee.shift.pivot</field>
+            <field name="model">hr.employee.shift</field>
             <field name="arch" type="xml">
                 <pivot string="Shifts" display_quantity="true">
                     <field name="employee_id" type="row"/>
@@ -131,8 +131,8 @@
         </record>
 
         <record id="shift_rating_view_graph" model="ir.ui.view">
-           <field name="name">employee.shift.graph</field>
-           <field name="model">employee.shift</field>
+           <field name="name">hr.employee.shift.graph</field>
+           <field name="model">hr.employee.shift</field>
            <field name="arch" type="xml">
                 <graph string="Rating Average" type="bar">
                     <field name="hr_shift" type="row"/>
@@ -143,7 +143,7 @@
 
         <record model="ir.actions.act_window" id="action_view_employee_shift">
             <field name="name">Employee Shift</field>
-            <field name="res_model">employee.shift</field>
+            <field name="res_model">hr.employee.shift</field>
             <field name="view_type">form</field>
             <field name="view_mode">gantt,calendar,tree,graph,pivot,form</field>
             <field name="context">{'search_default_group_by_batch': 1, 'search_default_group_by_employee': 1}</field>
