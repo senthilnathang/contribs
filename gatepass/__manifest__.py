@@ -8,6 +8,10 @@
     'category': 'Inventory',
     'author': 'Senthilnathan G',
     'depends': ['base','stock'],
+    'price': 50.00,
+    'currency': 'EUR',
+    'website': "https://www.twitter.com/senthilnathang",
+    'license': 'OPL-1',
     'data': [
         "views/gatepass_views.xml",
         "security/ir.model.access.csv",
