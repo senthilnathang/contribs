@@ -3,7 +3,7 @@
     'name': "Shift For Employees",
     'version': '1.0',
     'category': 'HR',
-    'price': 50.00,
+    'price': 10.00,
     'currency': 'EUR',
     'website': "https://www.twitter.com/senthilnathang",
     'license': 'OPL-1',
