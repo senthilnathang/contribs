@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id="report_gatepass_document">
+			<t t-call="web.external_layout">
+				<div class="page">
+					<div class="oe_structure" />
+					<div class="row" style="margin-top:20px;">
+						<div class="col-6">
+							<t t-if="o.partner_id">
+								<b>From Location:</b>
+							</t>
+							<div t-if="o.partner_id">
+								<div t-field="o.partner_id"
+									t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}' />
+							</div>
+						</div>
+					</div>
+					<h4 t-if="o.state == 'confirmed'">
+						Gate Pass Confirmation #
+						<span t-field="o.name" />
+					</h4>
+					<h4 t-if="o.state == 'draft'">
+						Gate Pass Draft #
+						<span t-field="o.name" />
+					</h4>
+					<div class="row mt32 mb32">
+						<div t-if="o.partner_id.name" class="col-3">
+							<strong>Party Name:</strong>
+							<p t-field="o.partner_id.name" />
+						</div>
+						<div t-if="o.date" class="col-3">
+							<strong>Date:</strong>
+							<p t-field="o.date" />
+						</div>
+						<div t-if="o.vehicle_number" class="col-3">
+							<strong>Vehicle Number:</strong>
+							<p t-field="o.vehicle_number" />
+						</div>
+						<div t-if="o.bill_number" class="col-3">
+							<strong>Source Document:</strong>
+							<p t-field="o.bill_number" />
+						</div>
+						<div t-if="o.remarks" class="col-3">
+							<strong>Reason:</strong>
+							<p t-field="o.remarks" />
+						</div>
+					</div>
+					<div class="row mt32 mb32">
+						<div t-if="o.picking_type" class="col-3">
+							<strong>Picking Type:</strong>
+							<p t-field="o.picking_type" />
+						</div>
+						<div t-if="o.return_type" class="col-3">
+							<strong>Return Type:</strong>
+							<p t-field="o.return_type" />
+						</div>
+						<div t-if="o.user_id.name" class="col-3">
+							<strong>Created By:</strong>
+							<p t-field="o.user_id.name" />
+						</div>
+						<div t-if="o.return_date" class="col-3">
+							<strong>Expected Return Date:</strong>
+							<p t-field="o.return_date" />
+						</div>
+						<div t-if="o.confirmed_by.name" class="col-3">
+							<strong>Confirmed By:</strong>
+							<p t-field="o.confirmed_by.name" />
+						</div>
+					</div>
+					<table class="table table-condensed" t-if="o.gatepass_line_ids">
+						<thead>
+							<tr>
+								<th class="text-center" width="10%">
+									<strong>S.No</strong>
+								</th>
+								<t t-if="o.picking_type != 'outgoing'">
+									<th class="text-center">
+										<strong>Product</strong>
+									</th>
+								</t>
+								<th class="text-center">
+									<strong>Description</strong>
+								</th>
+								<th class="text-center">
+									<strong>Quantity</strong>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<t t-set="serial" t-value="0" />
+							<tr t-foreach="o.gatepass_line_ids" t-as="line">
+								<t t-set="serial" t-value="serial+1" />
+								<td class="text-right">
+									<span t-esc="serial" />
+								</td>
+								<t t-if="o.picking_type != 'outgoing'">
+									<td>
+										<span t-field="line.product_id.name" />
+									</td>
+								</t>
+								<td>
+									<span t-field="line.description" />
+								</td>
+								<td class="text-right">
+									<span style="text-align:right" t-field="line.product_uom_qty" />
+									<span t-field="line.product_uom.name" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<br />
+					<br />
+					<div class="col-12">
+						<div class="row mt32 mb32 text-right">
+							<strong>Signature</strong>
+						</div>
+					</div>
+				</div>
+			</t>
+		</template>
+
+		<template id="report_gatepass">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="o">
+					<t t-call="gatepass.report_gatepass_document" />
+				</t>
+			</t>
+		</template>
+
+	</data>
+</odoo>

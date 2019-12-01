@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gatepass_gatepass,gatepass.gatepass,model_gatepass_gatepass,base.group_user,1,1,1,0
+access_gatepass_line,gatepass.line,model_gatepass_line,base.group_user,1,1,1,1
